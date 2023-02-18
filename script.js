@@ -48,7 +48,19 @@ console.log( localStorage.getItem('myLeadz')) ;
 
 localStorage.clear();
 
+const tabs = [
+    {url: 'Adeyemi Muaz'}
+]
+
 let saveEl =  document.getElementById('save-el');
+
+saveEl.addEventListener('click' , function() {
+    console.log(tabs[0].url) 
+    myLeads.push(tabs[0].url)
+    localStorage.setItem('myLeads', JSON.stringify(myLeads));
+});
+
+
 
 
 
