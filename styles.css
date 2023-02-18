@@ -16,7 +16,7 @@ body{
     background-color: lightblue;
 } */
 
-#input-btn,#delete-btn{
+#input-btn,#delete-btn,#save-el{
     background-color: #5f9341;
     color: white;
     padding: 10px 20px;
