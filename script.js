@@ -1,8 +1,16 @@
-let myLeads = ['www.myLeads.com'];
+let myLeads = [];
 
 let inputEl = document.getElementById('input-el');
 
+let deleteEl = document.getElementById('delete-btn');
 
+deleteEl.addEventListener('dbclick' , function() {
+    myLeads = [];
+    localStorage.clear();
+    render(myLeads);
+   
+
+})
 //A NEATER WAY TO ADD EVENT LISTENERS TO YOUR CODE
 let inputBtn = document.getElementById("input-btn");
 const ulEl = document.querySelector('#ul-el');
@@ -14,18 +22,18 @@ inputBtn.addEventListener('click' , function() {
     myLeads.push(inputEl.value)
     inputEl.value = ''
     localStorage.setItem('myLeads', JSON.stringify(myLeads))
-    renderLeads();
+    render();
 });
 
 
-function renderLeads() {
+function render(leads) {
     let listItems= '';
-    for (let i = 0;  i < myLeads.length; i++) {
+    for (let i = 0;  i < leads.length; i++) {
 
         listItems = `
         <li>
-            <a  target = '_blank' href = ${myLeads[i]}>
-            ${myLeads[i]};
+            <a  target = '_blank' href = '${leads[i]}'>
+            ${leads[i]};
         </li>
         `
     };
@@ -39,13 +47,6 @@ localStorage.setItem('myLeadz', 'www.exampleLead.com');
 console.log( localStorage.getItem('myLeadz')) ;
 
 localStorage.clear();
-
-
-
-
-
-
-
 
 
 

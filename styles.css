@@ -29,6 +29,7 @@ body{
 #delete-btn{
     background: white;
     color: green;
+    cursor: pointer;
 }
 #boxEl{
     background-color: crimson;
